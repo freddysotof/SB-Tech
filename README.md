@@ -2,6 +2,8 @@
 
 ## Backend
 
+- Configure appsettings with the DB Connection String
+
 ### `Update-Database`
 create database using migrations  (Code-First approach)
 
