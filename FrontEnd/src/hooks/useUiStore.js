@@ -1,15 +1,13 @@
 import { Modal } from 'antd';
 import { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { onCloseBarcodeScannerModal, onCloseCustomerActionModal, onCloseCustomerAddressModal, onCloseCustomerModal, onCloseProductModal, onCloseSideBar, onHideBackTop, onLoadingPage, onOpenBarcodeScannerModal, onOpenCustomerActionModal, onOpenCustomerAddressModal, onOpenCustomerModal, onOpenProductModal, onOpenSideBar, onPageLoaded, onSetBarcode, onSetBarcodeScanned, onShowBackTop } from '../store/ui';
+import { onCloseBarcodeScannerModal, onCloseProductModal, onCloseSideBar, onHideBackTop, onLoadingPage, onOpenBarcodeScannerModal,  onOpenProductModal, onOpenSideBar, onPageLoaded, onSetBarcode, onSetBarcodeScanned, onShowBackTop } from '../store/ui';
 import { FeedbackContext } from '../context/FeedbackContext';
 export const useUiStore = () => {
     const {
-        customerModal,
-        customerActionModal,
+      
         productModal,
         barcodeScannerModal,
-        customerAddressModal,
         loadingPageSpin,
         backTopButton,
         sideBar
@@ -33,37 +31,7 @@ export const useUiStore = () => {
     const hideBackTop = () => dispatch(onHideBackTop());
 
 
-    const openCustomerModal = () => {
-        dispatch(onOpenCustomerModal());
-    }
 
-    const closeCustomerModal = () => {
-        dispatch(onCloseCustomerModal());
-    }
-
-    const openCustomerActionModal = () => {
-        dispatch(onOpenCustomerActionModal());
-    }
-
-    const closeCustomerActionModal = () => {
-        dispatch(onCloseCustomerActionModal());
-    }
-
-    const openCustomerAddressModal = () => {
-        dispatch(onOpenCustomerAddressModal());
-    }
-
-    const closeCustomerAddressModal = () => {
-        dispatch(onCloseCustomerAddressModal());
-    }
-
-
-
-    const toggleCustomerModal = () => {
-        (customerModal.isModalOpen)
-            ? openCustomerModal() :
-            closeCustomerModal();
-    }
 
     const openProductModal = () => {
         dispatch(onOpenProductModal());
@@ -148,49 +116,24 @@ export const useUiStore = () => {
 
 
 
-    // const showSuccessMessage = (content) => {
-    //   messageApi.open({
-    //     type: 'success',
-    //     content: content,
-    //   });
-    // };
-    // const showErrorMessage = (content) => {
-    //   messageApi.open({
-    //     type: 'error',
-    //     content: content,
-    //   });
-    // };
-    // const showWarningMessage = (content) => {
-    //   messageApi.open({
-    //     type: 'warning',
-    //     content:content,
-    //   });
-    // };
 
 
     return {
         //* Propiedades
-        customerModal,
-        customerActionModal,
+      
         productModal,
         barcodeScannerModal,
-        customerAddressModal,
         sideBar,
         ...loadingPageSpin,
         ...backTopButton,
         //* Metodos
-        openCustomerModal,
-        closeCustomerModal,
-        openCustomerActionModal,
-        closeCustomerActionModal,
-        toggleCustomerModal,
+      
         openProductModal,
         closeProductModal,
         toggleProductModal,
         openBarcodeScannerModal,
         closeBarcodeScannerModal,
-        openCustomerAddressModal,
-        closeCustomerAddressModal,
+       
         openSideBar,
         closeSideBar,
         toggleSideBar,

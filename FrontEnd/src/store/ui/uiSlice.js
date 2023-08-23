@@ -4,24 +4,7 @@ import React from 'react';
 export const uiSlice = createSlice({
     name: 'ui',
     initialState: {
-        customerActionModal: {
-            isModalOpen: false,
-            okText: '',
-            cancelText: '',
-            title: '',
-            onOk: () => { },
-            onCancel: () => { },
-            showTextArea: false
-        },
-        customerModal: {
-            isModalOpen: false,
-            okText: '',
-            cancelText: '',
-            title: '',
-            onOk: () => { },
-            onCancel: () => { },
-            showTextArea: false
-        },
+        
         productModal: {
             isModalOpen: false,
             okText: '',
@@ -42,15 +25,7 @@ export const uiSlice = createSlice({
             onCancel: () => { },
             showTextArea: false
         },
-        customerAddressModal: {
-            isModalOpen: false,
-            okText: 'Confirmar',
-            cancelText: '',
-            title: '',
-            onOk: () => { },
-            onCancel: () => { },
-            showTextArea: false
-        },
+       
         loadingPageSpin: {
             isSpinning: false,
             spinContent: React.Fragment,
@@ -66,19 +41,7 @@ export const uiSlice = createSlice({
 
     },
     reducers: {
-        onOpenCustomerActionModal: (state, { payload }) => {
-            state.customerActionModal.isModalOpen = true;
-        },
-        onCloseCustomerActionModal: (state) => {
-            state.customerActionModal.isModalOpen = false;
-        },
-        onOpenCustomerModal: (state, { payload }) => {
-            state.customerModal.isModalOpen = true;
-        },
-        onCloseCustomerModal: (state) => {
-            state.customerModal.isModalOpen = false;
-        },
-
+  
         onOpenProductModal: (state, { payload }) => {
             state.productModal.isModalOpen = true;
         },
@@ -91,12 +54,7 @@ export const uiSlice = createSlice({
         onCloseBarcodeScannerModal: (state) => {
             state.barcodeScannerModal.isModalOpen = false;
         },
-        onOpenCustomerAddressModal: (state, { payload }) => {
-            state.customerAddressModal.isModalOpen = true;
-        },
-        onCloseCustomerAddressModal: (state) => {
-            state.customerAddressModal.isModalOpen = false;
-        },
+      
         onSetBarcode: (state, { payload }) => {
             state.barcodeScannerModal.barcode = payload;
         },
@@ -132,16 +90,12 @@ export const uiSlice = createSlice({
 });
 // Action creators are generated for each case reducer function
 export const {
-    onOpenCustomerModal,
-    onCloseCustomerModal,
-    onOpenCustomerActionModal,
-    onCloseCustomerActionModal,
+   
     onOpenProductModal,
     onCloseProductModal,
     onOpenBarcodeScannerModal,
     onCloseBarcodeScannerModal,
-    onOpenCustomerAddressModal,
-    onCloseCustomerAddressModal,
+   
     onSetBarcode,
     onSetBarcodeScanned,
     onLoadingPage,
