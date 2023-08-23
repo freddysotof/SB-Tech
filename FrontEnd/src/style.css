@@ -1,0 +1,22 @@
+ /* Disabled refresh on scroll to top */
+html, body {
+  overscroll-behavior: none;
+}
+
+.ant-menu-item.ant-menu-item-selected,
+.ant-menu-item:hover,
+.ant-menu-item:active
+{
+  background-color: #5F8495 !important;
+}
+
+
+.spin-layout,.spin-layout .ant-spin-container {
+  height: 100%;
+}
+
+.ant-descriptions-item-label{
+  background-color: #86a4b2 !important;
+  /* border: 1px solid #5F8495; */
+  color: #FFFF !important;
+}

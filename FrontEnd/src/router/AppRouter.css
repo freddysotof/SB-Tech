@@ -1,0 +1,8 @@
+
+.spin-layout .ant-spin {
+    position:static !important;
+   
+}
+.spin-layout .ant-spin-dot{
+    z-index: 99 !important;
+}
