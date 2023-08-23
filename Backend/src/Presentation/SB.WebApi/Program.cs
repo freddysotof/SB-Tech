@@ -70,18 +70,12 @@ builder.Services.AddCors(options =>
         List<string> origins = new();
         origins.AddRange(builder.Configuration.GetSection("AllowedOrigins")
             .Get<List<string>>());
-        if (builder.Environment.IsProduction())
             opts
           .WithOrigins(origins.ToArray())
           .AllowAnyMethod()
           .AllowAnyHeader()
           .SetIsOriginAllowedToAllowWildcardSubdomains();
-        else
-            opts
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                  .SetIsOriginAllowedToAllowWildcardSubdomains();
+     
     });
 });
 
